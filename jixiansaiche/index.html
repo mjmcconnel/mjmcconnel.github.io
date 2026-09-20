@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="极限赛车游戏攻略、新车评测、赛道分析与模拟驾驶技巧分享。探索高性能跑车与改装文化的最佳平台。">
+    <meta name="keywords" content="极限赛车游戏,赛车游戏攻略,模拟驾驶,跑车评测,改装指南">
+    <title>极限赛车游戏-硬核改装与赛道竞速指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #e63946;
+            --secondary-color: #1d3557;
+            --accent-color: #f1faee;
+            --text-main: #333333;
+            --text-light: #666666;
+            --bg-body: #f8f9fa;
+            --bg-card: #ffffff;
+            --border-radius: 8px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-card);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            font-size: 16px;
+            color: var(--text-main);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .header-actions .btn-subscribe {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .header-actions .btn-subscribe:hover {
+            background-color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1d3557 0%, #457b9d 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml;utf8,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: #d62828;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--secondary-color);
+        }
+
+        /* Section Titles */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 30px;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+        }
+
+        .section-title h2 {
+            font-size: 28px;
+            color: var(--secondary-color);
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .view-all {
+            font-size: 14px;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        /* Game Cards Grid */
+        .section {
+            padding: 60px 0;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .card-image {
+            height: 180px;
+            background-color: #eee;
+            position: relative;
+        }
+        
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(0,0,0,0.7);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .card-body {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-meta {
+            font-size: 12px;
+            color: var(--text-light);
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+
+        .card-desc {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        .card-footer {
+            margin-top: auto;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .rating {
+            color: #f1c40f;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* Features Section */
+        .features {
+            background-color: white;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 30px;
+            border: 1px solid #eee;
+            border-radius: var(--border-radius);
+            transition: background 0.3s;
+        }
+
+        .feature-item:hover {
+            background-color: #f8f9fa;
+            border-color: var(--primary-color);
+        }
+
+        .feature-icon {
+            font-size: 32px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .feature-item h3 {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+
+        .feature-item p {
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        /* Latest News / Articles */
+        .news-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        .news-list-item {
+            display: flex;
+            gap: 20px;
+            background: var(--bg-card);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin-bottom: 15px;
+            border: 1px solid #eee;
+        }
+
+        .news-thumb {
+            width: 200px;
+            height: 120px;
+            border-radius: 6px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .news-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .news-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .news-tag {
+            font-size: 12px;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .news-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .news-excerpt {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 10px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .news-date {
+            font-size: 12px;
+            color: #999;
+            margin-left: auto;
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background: var(--bg-card);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .widget-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+            color: var(--secondary-color);
+        }
+
+        .ranking-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .ranking-num {
+            font-size: 20px;
+            font-weight: 800;
+            color: #ddd;
+            margin-right: 15px;
+            width: 25px;
+            text-align: center;
+        }
+
+        .ranking-num.top-1 { color: #ffd700; }
+        .ranking-num.top-2 { color: #c0c0c0; }
+        .ranking-num.top-3 { color: #cd7f32; }
+
+        .ranking-info h4 {
+            font-size: 14px;
+            margin-bottom: 3px;
+        }
+
+        .ranking-info span {
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            color: #a8dadc;
+            margin-top: 15px;
+            max-width: 300px;
+        }
+
+        .footer-col h4 {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #a8dadc;
+            font-size: 14px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            text-align: center;
+            font-size: 13px;
+            color: #a8dadc;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+
+            nav ul {
+                margin: 15px 0;
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .feature-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .news-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .news-list-item {
+                flex-direction: column;
+            }
+
+            .news-thumb {
+                width: 100%;
+                height: 160px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M2 12h12"/></svg>
+                极速<span>赛车</span>社区
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">游戏库</a></li>
+                    <li><a href="#">改装指南</a></li>
+                    <li><a href="#">赛道攻略</a></li>
+                    <li><a href="#">视频解说</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="btn-subscribe">加入车友会</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>征服赛道，挑战极速极限</h1>
+                <p>汇集全网最硬核的赛车游戏评测、改装数据与实战技巧。从模拟驾驶到竞速竞技，助你成为真正的虚拟车神。</p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn btn-primary">查看热门榜单</a>
+                    <a href="#" class="btn btn-outline">浏览改装教程</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="section features">
+            <div class="container">
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <span class="feature-icon">🏎️</span>
+                        <h3>深度评测</h3>
+                        <p>专业团队实测车辆性能，提供详尽的物理引擎分析。</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🔧</span>
+                        <h3>改装百科</h3>
+                        <p>从引擎调校到空气动力学，全方位改装方案推荐。</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">📍</span>
+                        <h3>地图探索</h3>
+                        <p>全网最全赛道解析，弯道技巧与刹车点教学。</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🏆</span>
+                        <h3>赛事资讯</h3>
+                        <p>最新的电竞赛事动态与职业选手攻略分享。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Top Games Section -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-title">
+                        <h2>热门游戏推荐</h2>
+                        <p>当下最受玩家追捧的赛车作品</p>
+                    </div>
+                    <a href="#" class="view-all">查看全部 ></a>
+                </div>
+                <div class="grid-container">
+                    <article class="card">
+                        <div class="card-image">
+                            <span class="card-badge">PC/主机</span>
+                            <img src="https://picsum.photos/seed/racing1/400/300" alt="极限竞速：地平线5">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-meta">
+                                <span>开放世界</span>
+                                <span>评分 9.8</span>
+                            </div>
+                            <h3 class="card-title">极限竞速：地平线5</h3>
+                            <p class="card-desc">墨西哥的狂野风情，拥有最丰富的车辆收藏与自由度极高的漂移体验。</p>
+                            <div class="card-footer">
+                                <span class="rating">★★★★★</span>
+                                <a href="#" style="font-size:14px; color:var(--primary-color);">阅读详情 ></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-image">
+                            <span class="card-badge">模拟</span>
+                            <img src="https://picsum.photos/seed/racing2/400/300" alt="神力科莎">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-meta">
+                                <span>硬核模拟</span>
+                                <span>评分 9.5</span>
+                            </div>
+                            <h3 class="card-title">神力科莎：赛车计划3</h3>
+                            <p class="card-desc">追求极致真实，从拉力赛到F1，完美还原机械结构与驾驶手感。</p>
+                            <div class="card-footer">
+                                <span class="rating">★★★★☆</span>
+                                <a href="#" style="font-size:14px; color:var(--primary-color);">阅读详情 ></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-image">
+                            <span class="card-badge">手机</span>
+                            <img src="https://picsum.photos/seed/racing3/400/300" alt="狂野飙车9">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-meta">
+                                <span>休闲竞速</span>
+                                <span>评分 8.5</span>
+                            </div>
+                            <h3 class="card-title">狂野飙车9：传奇</h3>
+                            <p class="card-desc">视觉效果震撼，拥有超过百款超跑，适合随时随地享受速度快感。</p>
+                            <div class="card-footer">
+                                <span class="rating">★★★★☆</span>
+                                <a href="#" style="font-size:14px; color:var(--primary-color);">阅读详情 ></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-image">
+                            <span class="card-badge">国产</span>
+                            <img src="https://picsum.photos/seed/racing4/400/300" alt="QQ飞车手游">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-meta">
+                                <span>街机风格</span>
+                                <span>评分 8.2</span>
+                            </div>
+                            <h3 class="card-title">QQ飞车手游</h3>
+                            <p class="card-desc">经典IP延续，拥有独特的漂移与氮气系统，社交属性极强。</p>
+                            <div class="card-footer">
+                                <span class="rating">★★★★☆</span>
+                                <a href="#" style="font-size:14px; color:var(--primary-color);">阅读详情 ></a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest News & Sidebar -->
+        <section class="section" style="background-color: white;">
+            <div class="container">
+                <div class="news-layout">
+                    <div class="news-content">
+                        <div class="section-header" style="margin-bottom: 20px; border-left: none; padding-left: 0;">
+                            <div class="section-title">
+                                <h2>最新资讯</h2>
+                            </div>
+                        </div>
+
+                        <article class="news-list-item">
+                            <div class="news-thumb">
+                                <img src="https://picsum.photos/seed/news1/300/200" alt="新车评测">
+                            </div>
+                            <div class="news-content">
+                                <span class="news-tag">新车评测</span>
+                                <h3 class="news-title"><a href="#">全新一代超跑模拟登场：物理引擎升级解析</a></h3>
+                                <p class="news-excerpt">随着技术进步，新一代赛车游戏在轮胎抓地力、空气动力学模拟上有了质的飞跃，本文带你深度体验...</p>
+                                <div style="display:flex; align-items:center;">
+                                    <span class="news-date">2023-10-24</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="news-list-item">
+                            <div class="news-thumb">
+                                <img src="https://picsum.photos/seed/news2/300/200" alt="赛道攻略">
+                            </div>
+                            <div class="news-content">
+                                <span class="news-tag">赛道攻略</span>
+                                <h3 class="news-title"><a href="#">纽博格林北环赛道实战技巧：如何压榨每一秒</a></h3>
+                                <p class="news-excerpt">面对这个魔鬼赛道，新手玩家往往容易失控。本文分享进弯路线与刹车点的精准定位方法。</p>
+                                <div style="display:flex; align-items:center;">
+                                    <span class="news-date">2023-10-22</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="news-list-item">
+                            <div class="news-thumb">
+                                <img src="https://picsum.photos/seed/news3/300/200" alt="改装指南">
+                            </div>
+                            <div class="news-content">
+                                <span class="news-tag">改装指南</span>
+                                <h3 class="news-title"><a href="#">轻量化改装对性能的影响：数据对比实测</a></h3>
+                                <p class="news-excerpt">拆除车内不必要的座椅和隔音材料，能否在直线加速中带来可观的提升？实测数据告诉你答案。</p>
+                                <div style="display:flex; align-items:center;">
+                                    <span class="news-date">2023-10-20</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <aside>
+                        <div class="sidebar-widget">
+                            <h4 class="widget-title">热门改装排行</h4>
+                            <ul class="ranking-list">
+                                <li>
+                                    <span class="ranking-num top-1">1</span>
+                                    <div class="ranking-info">
+                                        <h4>涡轮增压器</h4>
+                                        <span>提升爆发力</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="ranking-num top-2">2</span>
+                                    <div class="ranking-info">
+                                        <h4>高性能刹车套件</h4>
+                                        <span>缩短制动距离</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="ranking-num top-3">3</span>
+                                    <div class="ranking-info">
+                                        <h4>赛道胎 (Slick)</h4>
+                                        <span>极致抓地力</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="ranking-num">4</span>
+                                    <div class="ranking-info">
+                                        <h4>进气系统改装</h4>
+                                        <span>改善引擎呼吸</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="ranking-num">5</span>
+                                    <div class="ranking-info">
+                                        <h4>ECU刷写</h4>
+                                        <span>优化点火正时</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="sidebar-widget">
+                            <h4 class="widget-title">热门话题</h4>
+                            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                                <span style="background:#eee; padding:5px 10px; border-radius:15px; font-size:12px; color:#555;">#模拟驾驶</span>
+                                <span style="background:#eee; padding:5px 10px; border-radius:15px; font-size:12px; color:#555;">#改装技巧</span>
+                                <span style="background:#eee; padding:5px 10px; border-radius:15px; font-size:12px; color:#555;">#纽博格林</span>
+                                <span style="background:#eee; padding:5px 10px; border-radius:15px; font-size:12px; color:#555;">#拉力赛</span>
+                                <span style="background:#eee; padding:5px 10px; border-radius:15px; font-size:12px; color:#555;">#F1赛车</span>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo" style="color: white;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M2 12h12"/></svg>
+                        极速<span>赛车</span>社区
+                    </a>
+                    <p>致力于为赛车游戏爱好者提供最专业、最全面的资讯与服务。在这里，每一个弯道都值得挑战。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>游戏分类</h4>
+                    <ul>
+                        <li><a href="#">PC端游戏</a></li>
+                        <li><a href="#">主机游戏</a></li>
+                        <li><a href="#">手机游戏</a></li>
+                        <li><a href="#">网页游戏</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>实用指南</h4>
+                    <ul>
+                        <li><a href="#">车辆改装</a></li>
+                        <li><a href="#">赛道教学</a></li>
+                        <li><a href="#">硬件推荐</a></li>
+                        <li><a href="#">常见问题</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">网站简介</a></li>
+                        <li><a href="#">联系方式</a></li>
+                        <li><a href="#">加入我们</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 极速赛车游戏社区 版权所有. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+                                                    </html>
