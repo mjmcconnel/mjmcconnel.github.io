@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="铜锣烧官方门户 - 提供正宗日式铜锣烧制作指南、红豆沙馅料选择、常见问题解答及历史文化介绍。探索这款源自日本的经典点心，学习如何在家轻松制作。">
+    <meta name="keywords" content="铜锣烧, 日式点心, 红豆馅, 豆沙包, 制作教程, 中华小当家">
+    <title>铜锣烧-正宗日式红豆饼制作指南与食谱大全</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d35400;
+            --secondary-color: #f39c12;
+            --bg-color: #fffdf5;
+            --text-color: #2c3e50;
+            --light-text: #7f8c8d;
+            --card-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            --border-radius: 12px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            font-size: 14px;
+            color: var(--light-text);
+            font-weight: 400;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #fff5e6 0%, #ffe0b2 100%);
+            padding: 80px 0;
+            text-align: center;
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+            margin-bottom: 50px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #5d4037;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .cta-button:hover {
+            background-color: #a04000;
+            transform: translateY(-2px);
+        }
+
+        /* Introduction Section */
+        .intro {
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .intro p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 16px;
+            color: var(--light-text);
+        }
+
+        /* Features Grid */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .feature-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--card-shadow);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .feature-card p {
+            color: var(--light-text);
+            font-size: 14px;
+        }
+
+        /* Recipe Section */
+        .recipe-section {
+            background-color: #fff;
+            padding: 60px 0;
+            border-radius: 20px;
+            margin-bottom: 60px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-header h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .section-header .subtitle {
+            color: var(--light-text);
+        }
+
+        .recipe-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .recipe-steps ol {
+            counter-reset: step;
+            padding-left: 20px;
+        }
+
+        .recipe-steps li {
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .recipe-steps li::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 24px;
+            height: 24px;
+            background: var(--secondary-color);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 24px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .ingredients-list li {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dashed #eee;
+            padding-bottom: 5px;
+        }
+
+        .ingredients-list span.qty {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .tips-box {
+            margin-top: 30px;
+            background: #fff3e0;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .tips-box h4 {
+            margin-bottom: 10px;
+            color: #e65100;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 60px 0;
+        }
+
+        .faq-item {
+            background: #fff;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 20px;
+            color: var(--primary-color);
+        }
+
+        .faq-question.active::after {
+            content: '-';
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 0 20px;
+            color: var(--light-text);
+            font-size: 15px;
+        }
+
+        .faq-answer p {
+            padding-bottom: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 50px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #bdc3c7;
+            font-size: 14px;
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #34495e;
+            color: #7f8c8d;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+
+            .recipe-content {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">
+                铜锣烧
+                <span>铜锣烧之家</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#intro">简介</a></li>
+                    <li><a href="#recipe">食谱</a></li>
+                    <li><a href="#tips">制作技巧</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>正宗日式铜锣烧</h1>
+                <p>源自日本的国民级点心，松软的面皮包裹着细腻的红豆沙。探索铜锣烧的历史文化，学习在家轻松制作这款经典的日式甜点。</p>
+                <a href="#recipe" class="cta-button">开始制作</a>
+            </div>
+        </section>
+
+        <!-- Intro Section -->
+        <section id="intro" class="intro container">
+            <p>铜锣烧，又称蜜三郎，是一种夹有红豆馅的日本和果子。因其外观酷似日本的打击乐器“铜锣”而得名。它不仅是日本动漫《中华小当家》中主角升龙美食的象征，也是日本茶道中常见的佐茶点心。</p>
+        </section>
+
+        <!-- Features Grid -->
+        <section class="container">
+            <div class="features">
+                <article class="feature-card">
+                    <span class="feature-icon">🍯</span>
+                    <h3>精选红豆沙</h3>
+                    <p>传统配方强调使用颗粒感适中、甜度适宜的红豆馅，避免过于甜腻，更能衬托面皮的麦香。</p>
+                </article>
+                <article class="feature-card">
+                    <span class="feature-icon">🍳</span>
+                    <h3>松软面皮</h3>
+                    <p>使用低筋面粉和泡打粉制作，讲究面糊的搅拌手法，确保烤制后内部气孔均匀，口感如云朵般轻盈。</p>
+                </article>
+                <article class="feature-card">
+                    <span class="feature-icon">🍵</span>
+                    <h3>经典搭配</h3>
+                    <p>铜锣烧最适合搭配抹茶或煎茶食用，茶汤的苦涩能完美中和红豆沙的甜度，提升味觉体验。</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Recipe Section -->
+        <section id="recipe" class="container">
+            <div class="recipe-section">
+                <div class="section-header">
+                    <h2>铜锣烧制作指南</h2>
+                    <p class="subtitle">材料简单，步骤清晰，在家也能复刻日式风味</p>
+                </div>
+                <div class="recipe-content">
+                    <!-- Ingredients -->
+                    <div class="ingredients">
+                        <h3>所需材料</h3>
+                        <ul class="ingredients-list">
+                            <li><span>低筋面粉</span> <span class="qty">100克</span></li>
+                            <li><span>鸡蛋</span> <span class="qty">2个</span></li>
+                            <li><span>细砂糖</span> <span class="qty">40克</span></li>
+                            <li><span>牛奶</span> <span class="qty">35-40毫升</span></li>
+                            <li><span>泡打粉</span> <span class="qty">3克</span></li>
+                            <li><span>色拉油</span> <span class="qty">10毫升</span></li>
+                            <li><span>红豆沙馅</span> <span class="qty">适量</span></li>
+                        </ul>
+                        <div class="tips-box">
+                            <h4>💡 专家提示</h4>
+                            <p>如果喜欢更浓郁的奶香，可以将牛奶替换为等量的淡奶油。面糊过筛一次可以去除结块，使成品更细腻。</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Steps -->
+                    <div class="steps">
+                        <h3>制作步骤</h3>
+                        <div class="recipe-steps">
+                            <ol>
+                                <li><strong>准备面糊：</strong>将鸡蛋打散，加入细砂糖搅拌均匀，直至糖完全融化。筛入低筋面粉和泡打粉，轻轻搅拌至无干粉颗粒。</li>
+                                <li><strong>加入液体：</strong>倒入牛奶和色拉油，继续用打蛋器搅拌，直到面糊呈现出顺滑的光泽感。用刮刀刮平表面，静置松弛10分钟。</li>
+                                <li><strong>煎制饼皮：</strong>平底锅小火加热，无需放油。用勺子舀入一勺面糊，自然摊平成圆形。当表面出现密集小气泡且底部凝固时，翻面煎至另一面微黄即可出锅。</li>
+                                <li><strong>组合成品：</strong>趁热将红豆沙均匀涂抹在两片饼皮中间。稍微按压一下，使馅料分布均匀，一份美味的铜锣烧就完成了。</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="container">
+            <div class="section-header">
+                <h2>常见问题解答</h2>
+                <p class="subtitle">关于铜锣烧制作与食用的小知识</p>
+            </div>
+            
+            <div class="faq-section">
+                <div class="faq-item">
+                    <div class="faq-question">为什么我做的铜锣烧容易回缩或者塌陷？</div>
+                    <div class="faq-answer">
+                        <p>这通常是因为面糊搅拌过度导致起筋，或者面糊中气泡过多。建议搅拌面糊时动作轻柔，不要过度打发，静置松弛的时间也要足够，这样面筋结构更稳定，成品才不会回缩。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">可以用普通面粉代替低筋面粉吗？</div>
+                    <div class="faq-answer">
+                        <p>不建议完全使用普通面粉（高筋面粉）。普通面粉筋度高，烤出的饼皮口感会比较硬且缺乏松软感。如果手边只有高筋面粉，可以尝试加入少量玉米淀粉混合使用，以降低面筋含量。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">铜锣烧需要冷藏保存吗？</div>
+                    <div class="faq-answer">
+                        <p>制作好的铜锣烧建议密封放入冰箱冷藏，可以保存2-3天。食用前可以用微波炉加热30秒，或者用平底锅稍微干煎一下，这样口感会更接近刚烤好的状态。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">红豆沙太甜怎么办？</div>
+                    <div class="faq-answer">
+                        <p>市面上购买的现成红豆馅通常糖分较高。可以在制作面糊时减少5-10克糖，或者在涂抹红豆沙时使用刮刀将豆沙稍微刮薄一些，减少每层红豆沙的厚度。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>关于铜锣烧</h4>
+                    <p style="font-size: 14px; color: #bdc3c7; line-height: 1.8;">
+                        我们致力于推广正宗日式点心文化，提供详细的制作教程和食材选购建议，让每个人都能在厨房里享受到简单的快乐。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#intro">历史起源</a></li>
+                        <li><a href="#recipe">食谱大全</a></li>
+                        <li><a href="#tips">烘焙技巧</a></li>
+                        <li><a href="#faq">常见问题</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li>邮箱：contact@dorayaki-guide.com</li>
+                        <li>地址：美食文化推广中心</li>
+                        <li>关注我们：@铜锣烧之家</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 铜锣烧之家. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ 交互逻辑
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const answer = item.nextElementSibling;
+                const isActive = item.classList.contains('active');
+                
+                // 关闭所有打开的项
+                document.querySelectorAll('.faq-question').forEach(q => {
+                    q.classList.remove('active');
+                    q.nextElementSibling.style.maxHeight = null;
+                });
+
+                // 如果刚才点击的不是已打开的，则打开它
+                if (!isActive) {
+                    item.classList.add('active');
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
